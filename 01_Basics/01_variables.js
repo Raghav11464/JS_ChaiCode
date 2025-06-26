@@ -5,7 +5,7 @@ var accountPassword = "12345"
 prefer not to use var for declaring vaiables in js, becasue of issue in block scope and functional scope
 */
 accountCity = "Bengaluru"   //this is also not preferred 
-let accountState;
+let accountState;   //not initialized with any value so undefined
 
 // accountId = 2 
 
