@@ -19,12 +19,17 @@ const bigNumber = 343423424324233423n
 //Array, Objects, Functions
 
 const names = ["Raghav", "Sharan", "Mishra"];    //Array 
+console.log(typeof names);  //this is also an object
+
 
 let myObj = {
     name: "Raghav",
     age: 22,
     city: "Bengaluru"
 }   //this is an Object
+//data is stored in the form of key - value pairs 
+console.log(typeof myObj);
+
 
 const myFunction = function(){
     console.log("Hello World");
