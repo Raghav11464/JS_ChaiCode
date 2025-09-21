@@ -46,10 +46,28 @@ const myFunction = function(){
 // *********************** Memory ***********************
 
 //Stack (Primitive) , Heap (Non-Primitive)
+//heap is referential, refernces are being used 
 
 let myName = "Raghav Sharan Mishra"
 let anotherName = myName
+// here we are using myName variable again so a copy of that variable is created in the stack 
 anotherName = "MishraJi"
 
 console.log(myName);
 console.log(anotherName);
+
+let user1 = {
+    email: "user@gmail.com",
+    upi: "user@ybl"
+}
+
+let user2 = user1;
+console.log(user1.email);
+console.log(user2.email);
+//user2 is also pointing to the same address where the data is stored in the heap 
+
+user2.email = "raghav@gmail.com";
+console.log(user1.email);
+console.log(user2.email);
+//here we made changes in user2 but it will reflect in user1 also 
+//Heap: Non-Primitive: Reference is used, since refrence is used changes will reflect in original also. (When you take refrence back from heap , you dont get a copy, you get refrence of original value)
