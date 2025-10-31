@@ -53,18 +53,21 @@ console.log(myArr);
 console.log(newArr);    //this is a string 
 
 //slice and splice methods 
-const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
-const newAnimals = animals.slice(2, 4);
-console.log(newAnimals);
+
+console.log("A ", myArr);
+
+const myn1 = myArr.slice(1, 3)
+//here 3 is exclusive so only 1 and 2 are taken care off 
+console.log(myn1);
+console.log("B ", myArr);
 
 
-const myFish = ["angel", "clown", "drum", "sturgeon"];
-const removed = myFish.splice(2, 1, "trumpet");
-//remove 1 element at index 2, and insert "trumpet"
-// console.log(removed);
-console.log(myFish);
+const myn2 = myArr.splice(1, 3)
+//this means from starting index 1, 3 elements are removed from the original array object
+console.log("C ", myArr);
+console.log(myn2);
 
-
+//splice() method manipulates the original array whereas slice does't work like that 
 
 /*
 Summary 
