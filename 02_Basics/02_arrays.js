@@ -7,7 +7,7 @@ const dc_heros = ["superman", "flash", "batman"]
 
 // console.log(marvel_heros);
 // console.log(marvel_heros[3][1]);
-//this getches the 1st index of the 3rd index element of the marvel heros array 
+//this fetches the 1st index of the 3rd index element of the marvel heros array 
 
 const allHeros = marvel_heros.concat(dc_heros);
 console.log(allHeros);
