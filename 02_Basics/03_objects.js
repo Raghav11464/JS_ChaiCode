@@ -9,8 +9,9 @@ const mySym = Symbol("key1");
 const JsUser = {
     name: "Raghav",
     "full name": "Raghav Sharan Mishra",
-    // mySym: "mykey1",
-    [mySym]: "mykey1",
+    [mySym]: "mykey1",  
+    //[] --> this is used to use the key as a Symbol, otherwise it will be taken as a string
+    //Example--> mySym: "mykey1",
     age: 20,
     location: "Gurugram",
     email: "raghav@gmail.com", 
@@ -19,17 +20,17 @@ const JsUser = {
 }
 //keys are by default taken as string 
 
-console.log(JsUser.email);//this is not preferable for accesing the value at a key 
-console.log(JsUser["email"]);//instead use square bracket notation 
+console.log(JsUser.email);          //this is not preferable for accesing the value at a key 
+console.log(JsUser["email"]);       //instead use square bracket notation 
 console.log(JsUser["full name"]);
-console.log(typeof JsUser.mySym);   //this is string 
+console.log(typeof JsUser.mySym);   //this is string if we are not using [] square brackets around the symbol
 //so for using it as a Symbol datatype 
 //use [] 
 console.log(JsUser[mySym]);
 
 JsUser["email"] = "raghav@yahoo.com"
- Object.freeze(JsUser)
-// //now this object has been freezed and no changes will be reflected from now onwards 
+// Object.freeze(JsUser)
+// now this object has been freezed and no changes will be reflected from now onwards 
 // JsUser.email = "raghavmishra@yahoo.com"
 console.log(JsUser)
  
@@ -43,7 +44,7 @@ console.log(JsUser.greeting());
 //this gives reference of the function 
 
 JsUser.greeting2 = function() {
-    console.log(`Hello JsUser, ${this.name}`);
+    console.log(`Hello JsUser, ${JsUser.name}`);
     //string interpolation, using backticks 
 }
 

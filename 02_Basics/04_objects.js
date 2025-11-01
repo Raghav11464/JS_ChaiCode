@@ -16,6 +16,7 @@ const regularUser = {
         }
     }
 }
+//Nested objects
 
 // console.log(regularUser.fullname.userfullname.firstname);
 
@@ -79,7 +80,7 @@ const {courseInstructor: instructor} = course
 console.log(instructor);
 
 //JSON API 
-//objcts without any name with array as the elements 
+//objcts without any name 
 
 // {
 //     "name": "hitesh",
