@@ -39,7 +39,7 @@ if(true) {
     //this is out of scope 
 }
 
-// console.log(username);
+console.log(username);
 // //this is also out of scope
 
 

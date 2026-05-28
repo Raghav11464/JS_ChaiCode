@@ -22,7 +22,7 @@ console.log(this);
 //     console.log(this.username);
 //     //this gives undefined
 // }
-
+//'this' never refer to the function scope variables thats why we are getting undefined as the output 
 // chai()
 
 //================Arrow function===================
