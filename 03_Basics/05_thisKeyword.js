@@ -25,4 +25,19 @@ const test = function() {
 //this will print window object in browser, 
 //but here it will give --> {} an empty object
 
+//Arrow functions dont have their own this, rather they take it from their external(lexical) scope
+//thats why we use normal functions as the object methods, and we dont use an arrow function as the object method 
+const user1 = {
+    username: "Raghav Sharan Mishra",
+    welcomeGreet: () => {
+        console.log(`${this.username}, Welcome to the website!!`);
+        
+    }
+}
+// user1.welcomeGreet()
+//here we are getting username as undefined, because we are calling the arrow function, and its correct context is 'undefined' from the global scope 
 
+
+//then Even handlers have their own this 
+//this --> element that trigerred the event 
+ 
