@@ -11,7 +11,7 @@ const user = {
     }
 }
 
-// console.log(user.greet); // --> this returns the reference of the function (without parenthesis)
+// console.log(user.greet); // --> this returns the reference of the function --> (without parenthesis)
 // user.greet()
 
 //functional expressions dont have their own 'this' or executional context
@@ -35,9 +35,9 @@ const user1 = {
     }
 }
 // user1.welcomeGreet()
-//here we are getting username as undefined, because we are calling the arrow function, and its correct context is 'undefined' from the global scope 
+//here we are getting username as undefined, because we are calling the arrow function, and its correct context is 'undefined' from the global scope as it(arrow function) inherits its 'this' keyword from the surrounding scope  
 
 
-//then Even handlers have their own this 
+//then Even handlers have their own 'this' or executional context 
 //this --> element that trigerred the event 
  

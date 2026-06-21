@@ -63,28 +63,50 @@ languages.forEach(function(item) {
 languages.forEach((item) => {
     // console.log(item);
 })
+//Callback function: a function which is passed as an argument to another function 
+//callback functions are generally used for asynchronous operations --> waiting for an API to call 
 
 //Way 3
 function printObj(item) {
     // console.log(item);
 }
 languages.forEach(printObj)
+//here we are only passing the function reference --> without parenthesis () 
 
 //to print the element, index and the entire array 
 languages.forEach((item, idx, arry) => {
-    console.log(item, idx, arry);
+    // console.log(item, idx, arry);
 })
+const array = ["Raghav", "Sharan", "Mishra"]
+const values = array.forEach((item) => {
+    // console.log(item);
+})
+// console.log(values);
+//'values' variable does not hold any value in it, it remains undefined
+
 
 const userData = [
     {
-
+        username: "Raghav", 
+        age: 21
     }, 
     {
-
+        username: "Rahul", 
+        age: 22
     },
     {
-
+        username: "Rohan", 
+        age: 19
     }
 ]
 //array of objects 
+userData.forEach((item) => {
+    console.log(item.age);
+})
+//in above loop, 'item' param represents each object in the array of objects 
 
+//The forEach() method is an iterative method. It calls a provided callbackFn function once for each element in an array in ascending-index order.
+
+//forEach() always returns undefined and is not chainable.
+//Therefore we use map() and other functions
+//There is no way to stop or break a forEach() loop other than by throwing an exception. If you need such behaviour, the forEach() method is the wrong tool.
