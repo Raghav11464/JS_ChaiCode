@@ -1,3 +1,5 @@
+<!-- In this file we have mainly covered DOM (Document Object Model) concepts -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,8 +15,57 @@
 </head>
 <body class="bg-black">
     <div>
-        <h1 id="title" class="heading">DOM Learning with Hitesh Bhaiya</h1>
+        <h1 id="title" class="heading">DOM Learning with Hitesh Bhaiya <span>test text</span></h1>
+        <h2>Raghav Sharan Mishra</h2>
+        <h4>Raghav Sharan Mishra</h4>
+        <h4>Raghav Sharan Mishra 2005</h4>
         <p>Jai hind, Vande Mataram🇮🇳</p>
+        <input type="password" name="" id="">
+
+        <ul>
+            <li class="list-item">one</li>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+            <li class="list-item">four</li>
+        </ul>
     </div>
 </body>
-</html> 
+</html>  
+
+<!-- So we have different DOM manipulating methods in javascript -->
+<!-- console.log(window.document), using this we can access the document object of a web page  -->
+<!-- console.dir(document) gives us the hidden info of the document object --> 
+ <!-- for selection: 
+  -document.getElementById()
+  -document.querySelector() -> returns only the very first query of the specified tag
+  -document.querySelectorAll() -> returns a NodeList comprising of all the queries of the specified tag
+ -->
+
+ <!-- NodeList and HTMLCollection -> these do not exactly replicate an array, they just look like an array -->
+  <!-- Both NodeList and HTMLCollection can be converted to an JS array using:
+   -> using Array.from()
+  -->
+
+<!-- reading and changing the content
+-innerText
+-innerHTML -> return all the HTML tags along with the text 
+-textContent -> return only the text content 
+-->
+
+<!-- Changing the style:
+element.style.color = 'green' 
+there are a no of different style related attributes
+-->
+
+<!-- Classes:
+classList.add()
+classList.remove()
+classList.toggle() 
+-->
+
+
+<!-- document.getElementByClassName() returns a HTML Collection where as document.querySelectorAll() returns a NodeList -->
+
+<!-- forEach works for NodeList but its not available in HTML Collection -->
+<!-- so convert HTML collection to an array using Array.from() and then operate it using array methods -->
+
