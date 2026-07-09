@@ -1,0 +1,60 @@
+<!-- This file comprises of different DOM objects creation and accessing concepts and methods  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur Code</title>
+</head>
+<body style="background-color: #212122; color: #fff;">
+    <div class="parent">
+        <div class="days">Monday</div>
+        <div class="days">Tuesday</div>
+        <div class="days">Wednesday</div>
+        <div class="days">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent =  document.querySelector('.parent')
+    // console.log(parent.children);
+    // console.log(parent.children[0]);
+    // console.log(parent.children[1]);
+    // console.log(parent.children[2].innerText);
+
+    for (let i = 0; i < parent.children.length; i++) {
+        // console.log(parent.children[i].innerText);
+    }
+    parent.children[0].style.color = 'yellow'
+
+    // how we can directly fetch the first and last children of a specific parent element 
+
+    console.log(parent.firstElementChild);
+    // the same thing can be fetched using document.querySelector('.days') 
+    //this will return the very first element with the days className which is 'Monday' in our case
+    console.log(document.querySelector('.days'));
+
+    const dayOne = parent.firstElementChild//this is the first child of the parent 
+    // console.log(dayOne);
+
+    // console.log(dayOne.parentElement);
+    //this returns the parent element of the dayOne element 
+
+    // console.log(dayOne.nextElementSibling);
+    //this returns the very next element to the current child element 
+
+    console.log("NODES: ", parent.childNodes);
+    //this is returns a Node List of all the nodes in the current Document
+    //even a linebreak is considered as a node indivisual node 
+    //entire document is represented using a tree structure 
+    //two consecutive line breaks are not considered by the browser 
+    //it is takes as a single text node 
+
+    //This is traversing, how we can traverse to children nodes or elements and parent element or node 
+    
+
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai Aur Code</title>
+</head>
+<body style="background-color: #212122; color: #fff;">
+    
+</body>
+<script>
+    const div = document.createElement('div')
+    console.log(div);
+    //now we have to add some properties to our created element such as className, id etc etc
+    div.className = "main"
+    div.id = Math.round(Math.random() * 10)
+    div.setAttribute("title", "Chai aur Code")
+    div.style.backgroundColor = 'green'
+    div.style.padding = '10px'
+    div.style.borderRadius = '15px'
+    // div.innerText = "Raghav Sharan Mishra"
+    //this is not used conventionally, setAttribute is used as it is more efficient
+
+    const textNode = document.createTextNode("Chair Aur Code")
+    //append this textNode to the div element 
+    div.appendChild(textNode)
+
+    //now we have to attach this div element to body of our document or html page 
+    document.body.appendChild(div)
+    
+</script>
+</html>
