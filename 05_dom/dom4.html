@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212122; color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+
+    // Adding elements to the doc
+    function addLanguage(langName) {
+        const li = document.createElement('li')
+        li.innerText = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage('Python')
+    addLanguage('Java')
+
+    //above function is okayish but its not optimized
+    //whenever abouve function is called, it traverse the entire tree structure 
+    //we can optmimize by creating a textNode and append it to our 'li'
+
+    function addLanguageOpti(langName) {
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguageOpti('typescript')
+
+    //Edit
+    const thirdLang = document.querySelector("li:nth-child(3)")
+    // thirdLang.innerHTML = "Ruby"
+
+    const newLi = document.createElement('li')
+    // newLi.appendChild(document.createTextNode('React'))
+    newLi.innerHTML = "React"
+    // thirdLang.replaceWith(newLi)
+    //using replaceWith() function, we replaced thirdLan element with newly created newLi element 
+    
+
+    // Edit
+    const firstLang = document.querySelector("li:first-child")
+    const newLi2 = document.createElement('li')
+    newLi2.innerHTML = "Typescript"
+    firstLang.replaceWith(newLi2)
+    // newLi2.outerHTML = "<li>Raghav</li>"
+    //other method of modifying the element in a document 
+
+    // Remove
+    const lastLang = document.querySelector("li:last-child")
+    lastLang.remove()
+
+    
+</script>
+</html>
