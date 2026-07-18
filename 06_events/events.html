@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Images for Fun</h2>
+    <div>
+        <ul id="images">
+            <li>
+                <img width="200px" id="photoshop"
+                    src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=200&h=300&fit=crop" alt="Laptop">
+            </li>
+            
+            <li>
+                <img width="200px" id="japan"
+                    src="https://images.unsplash.com/photo-1492571350019-22de08371fd3?w=200&h=300&fit=crop" alt="Japan">
+            </li>
+            
+            <li>
+                <img width="200px" id="river"
+                    src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=200&h=300&fit=crop" alt="River">
+            </li>
+            
+            <li>
+                <img width="200px" id="owl" src="https://images.unsplash.com/photo-1511497584788-876760111969?w=200&h=300&fit=crop"
+                    alt="Owl">
+            </li>
+            
+            <li>
+                <img width="200px" id="prayer" src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=200&h=300&fit=crop" alt="Prayer">
+            </li>
+            
+            <li>
+                <a style="color: aliceblue;" href="https://www.google.com" id="google">Google</a>
+            </li>
+        </ul>
+    </div>
+    <!-- we can directly add an onclick even to the list item image but it is not scalable when our application is scaling up -->
+</body>
+<script>
+    //Method 1
+    // document.getElementById('photoshop').onclick = function() {
+    //     alert("Laptop Clicked")
+    // }
+
+    //other methods which were used to add an event:-
+    //attachEvent()
+    //jQuery - on
+
+    //Method 2
+    document.getElementById('photoshop').addEventListener('click', function() {
+        // alert('Laptop Clicked Again')
+    })
+    //we can directly an event listner to a specific element 
+
+    document.getElementById('photoshop').addEventListener('dblclick', function(e) {
+        // console.log(e), false
+    })
+    //above even listners returns a prototype Pointer Events
+    //following are some of the important pointer events generally asked in interviews:
+
+    //type, timestamp, defaultPrevented
+    //target, toElement, srcElement, currentTarget
+    //clientX, clientY, screenX, screenY
+    //altkey, ctrlkey, shiftkey, keyCode
+
+
+    //Event Propagation --> we have two things 
+    //Event Bubbling and Event Capturing 
+
+    //this is Event bubbling - from bottom to top, execution of events 
+    document.getElementById('images').addEventListener('click', function(e) {
+        // console.log("clicked inside the ul")
+    }, false)
+
+    document.getElementById('owl').addEventListener('click', function(e) {
+        // console.log("clicked owl");
+        // e.stopPropagation()
+        //this method stops the bubbling of even from bottom to top 
+        // and hence prevent event propagation 
+    }, false)
+
+
+    //then we have exactly opposite of bubbling i.e. Event Capturing 
+    //capturing means top to bottom 
+    document.getElementById('images').addEventListener('click', function(e) {
+        // console.log("clicked inside the ul")
+        // e.stopPropagation()
+        //this also does the same and stops the capturing of event from top to bottom 
+    }, true)
+
+    document.getElementById('owl').addEventListener('click', function(e) {
+        // console.log("clicked owl")
+    }, true)
+
+    //to prevent default behaviour we use e.preventDefault()
+    document.getElementById("google").addEventListener('click', function(e) {
+        e.preventDefault()//to prevent the default behavior of this event 
+        e.stopPropagation()//this stops the propagation of event to above events from bottom to top order
+        console.log("Google is clicked"); 
+    }, false)
+
+
+    //how to make an image disappear when on a click event 
+    document.querySelector('#images').addEventListener('click', function(e){
+        // console.log(e.target.parentNode);
+        let removeitem = e.target.parentNode
+        // removeitem.parentNode.removeChild(removeitem)
+        // removeitem.remove()
+
+        //bot the above methods are used to remove an item or element from an html document 
+    }, false)
+    //in our current scenario, if we are clicking on a certain element our page, its parentNode will be deleted 
+    //so if we will click google href li element, its parent node is unordered list, so entire ul will be deleted 
+    //This is also known or called as Event Spill-Over
+
+    //How we can fix this Event Spill-Over issue ?
+    document.querySelector('#images').addEventListener('click', function(e) {
+        let tag = e.target.tagName
+        if(tag == 'IMG') {
+            // console.log(e.target.id);
+            let removeItem = e.target.parentNode
+            removeItem.remove()
+        }
+    }, false)
+
+</script>
+</html>
