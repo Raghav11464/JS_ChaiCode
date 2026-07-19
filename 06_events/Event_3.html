@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    //a kind of Mini project 
+    const sayHello = function(str) {
+        console.log(str, Date.now());
+    }
+
+    let intervalId
+    //declare intervalId globally so that we can use interval's reference for stopping it using clearInterval in stop button event listner 
+    document.querySelector('#start').addEventListener('click', function() {
+        intervalId = setInterval(sayHello, 1000, "hello, Raghav!")
+    })
+
+    document.querySelector('#stop').addEventListener('click', function() {
+        clearInterval(intervalId)
+        console.log("Interval STOPPED");
+    })
+
+
+</script>
+</html>
