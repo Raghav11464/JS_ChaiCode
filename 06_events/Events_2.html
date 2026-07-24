@@ -23,19 +23,16 @@
     const changeText = function() {
         document.querySelector('h1').innerHTML = "Raghav Sharan Mishra"
     }
-    // setTimeout(changeText, 2000)
+    const timeoutId = setTimeout(changeText, 2000)
     //here we are passing a functional expression var as the callback function to setTimeout
-    const changeMe = setTimeout(changeText, 2000)
 
     // clearTimeout(changeMe)//this needs reference, that means which timeout is to cleared 
 
     document.querySelector('#stop').addEventListener('click', function() {
-        clearTimeout(changeMe)
+        clearTimeout(timeoutId)
         console.log("STOPPED");
     })
     //as soon as i click the button, within the specified time in ms in setTimeout, our text will not change as we used clearTimeout in the event listner 
-
-    
 
 </script>
 </html>
